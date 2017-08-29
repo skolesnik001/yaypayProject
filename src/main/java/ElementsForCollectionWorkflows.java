@@ -26,7 +26,7 @@ public class ElementsForCollectionWorkflows extends BasePage {
 
 
     public WebElement getCollectionWorkflowsButton() {
-        waitMills(1500);
+        waitMills(1700);
         return collectionWorkflowsButton;
     }
 

@@ -14,7 +14,6 @@ public class CollectionWorkflowsTest extends Initialization {
     public void collectionWorkflowsCase() {
         loginPage.userAuthorization(EMAIL_FOR_LOGIN, PASSWORD);
         dashboardPage.ifPopUpWindowWithUpdateDisplayed();
-        collectionWorkflowsPage.waitMills(1000);
         collectionWorkflowsPage.waitElement(collectionWorkflowsPage.getCollectionWorkflowsButton(), 40);
         collectionWorkflowsPage.getCollectionWorkflowsButton().click();
         collectionWorkflowsPage.editWorkflowTitle();
