@@ -27,7 +27,11 @@ public class CollectionWorkflowsTest extends Initialization {
         collectionWorkflowsPage.moveToPlusNotificationSectionAndCheckSetByDefault();
         collectionWorkflowsPage.waitElement(collectionWorkflowsPage.saveTemplateButton,10);
         collectionWorkflowsPage.saveTemplateButton.click();
-        collectionWorkflowsPage.waitMills(5000);
+        collectionWorkflowsPage.elementIsPresent(collectionWorkflowsPage.allBlockOverdueEmail);
+        collectionWorkflowsPage.elementIsPresent(collectionWorkflowsPage.allBlockDelinquentCall);
+        collectionWorkflowsPage.elementIsPresent(collectionWorkflowsPage.allBlockDelinquentNotification);
+        collectionWorkflowsPage.elementIsPresent(collectionWorkflowsPage.allBlockDelinquentEmail);
+
 
 
 

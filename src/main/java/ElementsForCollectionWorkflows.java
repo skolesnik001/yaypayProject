@@ -16,6 +16,15 @@ public class ElementsForCollectionWorkflows extends BasePage {
 
     protected By allBlockCurrent = By.cssSelector(".wrap-action-block.creation.type-call");
 
+    protected By allBlockOverdueEmail = By.cssSelector(".wrap-action-block.overdue.type-email");
+
+    protected By allBlockDelinquentCall = By.cssSelector(".wrap-action-block.delinquent.type-call");
+
+    protected By allBlockDelinquentEmail = By.cssSelector(".wrap-action-block.delinquent.type-email");
+
+    protected By allBlockDelinquentNotification = By.cssSelector(".wrap-action-block.delinquent.type-notif");
+
+
     public WebElement getCollectionWorkflowsButton() {
         waitMills(1500);
         return collectionWorkflowsButton;
