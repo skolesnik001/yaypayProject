@@ -17,8 +17,12 @@ public class ElementsForCollectionWorkflows extends BasePage {
     protected By allBlockCurrent = By.cssSelector(".wrap-action-block.creation.type-call");
 
     public WebElement getCollectionWorkflowsButton() {
+        waitMills(1500);
         return collectionWorkflowsButton;
     }
+
+    @FindBy(css = ".footer-content")
+    public WebElement footer;
 
     @FindBy(xpath = "//*[@class='left-menu-item'][4]")
     protected WebElement collectionWorkflowsButton;
@@ -40,7 +44,7 @@ public class ElementsForCollectionWorkflows extends BasePage {
     WebElement moveToDelinquentPlusElement;
 
 
-    @FindBy(xpath = "//*[@class='js-remainder-delinquent-block']//*[@class='add-subreminder js-add-reminder k-item k-state-default k-first k-last']//*[@class='material-icons']")
+    @FindBy(xpath = "//*[@class='js-remainder-delinquent-block']//*[@class='add-menu subreminder js-add-menu k-widget k-reset k-header k-menu k-menu-vertical']")
     protected WebElement moveToDelinquentPlusInEmailSection;
 
     By email = By.xpath("//*[@data-type='EMAIL']");
@@ -65,7 +69,7 @@ public class ElementsForCollectionWorkflows extends BasePage {
     @FindBy(xpath = "//*[@data-type='DELINQUENT']//*[@data-type='EMAIL']")
     protected WebElement emailForDelinquent;
 
-    @FindBy(xpath = "//*[@data-type='DELINQUENT']//*[@data-type='NOTIF']")
+    @FindBy(xpath = "//*[@class='js-remainder-delinquent-block']//*[@class='js-reminders-list k-group k-menu-group k-popup k-reset k-state-border-left']//*[@data-type='NOTIF']")
     protected WebElement notificaticonForDelinquent;
 
 
@@ -125,7 +129,7 @@ public class ElementsForCollectionWorkflows extends BasePage {
 
 
 
-    @FindBy(xpath = "//*[@class='wrap-action-block sub-reminder delinquent type-notif']//*[@class='k-input']")
+    @FindBy(xpath = "//*[@class='wrap-action-block sub-reminder delinquent type-notif']//*[@class='k-dropdown-wrap k-state-default']")
     protected WebElement textInNotificationSectionWidget;
 
     @FindBy(xpath = "//*[@class='wrap-action-block sub-reminder delinquent type-notif']//*[@class='sub js-reminder-input add-numbers-max']")
@@ -136,6 +140,11 @@ public class ElementsForCollectionWorkflows extends BasePage {
 
     @FindBy(xpath = "//*[@class='js-remainder-creation-block']//*[@class='delete-btn js-delete-reminder']")
     protected WebElement deleteButtonForCurrentSection;
+
+
+    @FindBy(css = ".save.js-save-template-btn")
+    protected WebElement saveTemplateButton;
+
 
 
 

@@ -14,22 +14,19 @@ public class CollectionWorkflowsTest extends Initialization {
     public void collectionWorkflowsCase() {
         loginPage.userAuthorization(EMAIL_FOR_LOGIN, PASSWORD);
         dashboardPage.ifPopUpWindowWithUpdateDisplayed();
-        collectionWorkflowsPage.waitMills(500);
-        collectionWorkflowsPage.waitElement(collectionWorkflowsPage.getCollectionWorkflowsButton(), 20);
+        collectionWorkflowsPage.waitMills(1000);
+        collectionWorkflowsPage.waitElement(collectionWorkflowsPage.getCollectionWorkflowsButton(), 40);
         collectionWorkflowsPage.getCollectionWorkflowsButton().click();
         collectionWorkflowsPage.editWorkflowTitle();
         collectionWorkflowsPage.moveToCurrentSectionAndClickCallAndCheckSetByDefault();
         collectionWorkflowsPage.moveToOverdueSectionAndClickEmailAndCheckSetByDefault(collectionWorkflowsPage.getEmailForOverude());
         collectionWorkflowsPage.moveToDelinquentSectionAndClickOnActionAndCheckSetByDefault(collectionWorkflowsPage.callForDelinquent);
-
-
-
         collectionWorkflowsPage.deleteButtonForCurrentSection.click();
         collectionWorkflowsPage.elementIsNotPresentByXpathElement(collectionWorkflowsPage.deleteButtonForCurrentSectionBy);
-
         collectionWorkflowsPage.moveToDelinquentSectionAndClickOnActionAndCheckSetByDefault(collectionWorkflowsPage.emailForDelinquent);
-        collectionWorkflowsPage.checkBoxForDelinquentSection.click();
-        collectionWorkflowsPage.moveToPlusInEmailSectionAndCheckSetByDefault();
+        collectionWorkflowsPage.moveToPlusNotificationSectionAndCheckSetByDefault();
+        collectionWorkflowsPage.waitElement(collectionWorkflowsPage.saveTemplateButton,10);
+        collectionWorkflowsPage.saveTemplateButton.click();
 
 
 

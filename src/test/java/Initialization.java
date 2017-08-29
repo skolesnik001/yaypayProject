@@ -21,8 +21,8 @@ public class Initialization {
     public void before() {
         driver.get(DEMO_URL);
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-        driver.manage().timeouts().setScriptTimeout(25, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+        driver.manage().timeouts().setScriptTimeout(40, TimeUnit.SECONDS);
 
     }
 

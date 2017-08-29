@@ -1,6 +1,8 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.internal.Locatable;
 
 
 public class CollectionWorkflowsPage extends ElementsForCollectionWorkflows {
@@ -16,7 +18,7 @@ public class CollectionWorkflowsPage extends ElementsForCollectionWorkflows {
 
 
     public void editWorkflowTitle() {
-        waitElement(getNewWorkflowsButton(), 10);
+        waitElement(getNewWorkflowsButton(), 20);
         getNewWorkflowsButton().click();
         waitMills(500);
         waitElement(getEditNameButton(), 10);
@@ -35,7 +37,8 @@ public class CollectionWorkflowsPage extends ElementsForCollectionWorkflows {
         moveToElement(moveToCurrentPlusElement);
         elementIsPresent(email);
         elementIsPresent(callForCurrent);
-        waitElement(getCallForCurrent(), 10);
+        waitMills(800);
+        waitElement(getCallForCurrent(), 20);
         getCallForCurrent().click();
         waitElement(emailFieldForCurrentSectionWidget, 10);
         waitMills(1000);
@@ -73,16 +76,18 @@ public class CollectionWorkflowsPage extends ElementsForCollectionWorkflows {
         assertForAllAttribute("90", dateInDelinquentSectionWidget);
     }
 
-    public void moveToPlusInEmailSectionAndCheckSetByDefault(){
+    public void moveToPlusNotificationSectionAndCheckSetByDefault(){
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();",footer);
         waitElement(moveToDelinquentPlusInEmailSection,10);
-        waitMills(2000);
+        waitMills(500);
         moveToElement(moveToDelinquentPlusInEmailSection);
+        waitMills(500);
         waitElement(notificaticonForDelinquent, 10);
-        notificaticonForDelinquent.click();
+        moveToElement(notificaticonForDelinquent);
         waitElement(textInNotificationSectionWidget,10);
-        waitMills(1000);
-        assertForAll("days after due date", textInNotificationSectionWidget);
-        waitMills(1000);
-        assertForAllAttribute("90", dayFieldInNotificationSectionWidget);
+        waitMills(500);
+        assertForAll("If last email wasn't opened", textInNotificationSectionWidget);
+        waitMills(500);
+        assertForAllAttribute("1", dayFieldInNotificationSectionWidget);
     }
 }
