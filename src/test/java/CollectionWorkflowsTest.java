@@ -27,6 +27,7 @@ public class CollectionWorkflowsTest extends Initialization {
         collectionWorkflowsPage.moveToPlusNotificationSectionAndCheckSetByDefault();
         collectionWorkflowsPage.waitElement(collectionWorkflowsPage.saveTemplateButton,10);
         collectionWorkflowsPage.saveTemplateButton.click();
+        collectionWorkflowsPage.waitMills(5000);
 
 
 
