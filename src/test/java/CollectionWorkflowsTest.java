@@ -28,7 +28,7 @@ public class CollectionWorkflowsTest extends Initialization {
         collectionWorkflowsPage.elementIsNotPresentByXpathElement(collectionWorkflowsPage.deleteButtonForCurrentSectionBy);
 
         collectionWorkflowsPage.moveToDelinquentSectionAndClickOnActionAndCheckSetByDefault(collectionWorkflowsPage.emailForDelinquent);
-        //collectionWorkflowsPage.checkBoxForDelinquentSection.click();
+        collectionWorkflowsPage.checkBoxForDelinquentSection.click();
         collectionWorkflowsPage.moveToPlusInEmailSectionAndCheckSetByDefault();
 
 
