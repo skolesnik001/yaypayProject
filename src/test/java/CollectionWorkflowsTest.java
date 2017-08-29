@@ -1,3 +1,4 @@
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /**
@@ -26,10 +27,10 @@ public class CollectionWorkflowsTest extends Initialization {
         collectionWorkflowsPage.moveToPlusNotificationSectionAndCheckSetByDefault();
         collectionWorkflowsPage.waitElement(collectionWorkflowsPage.saveTemplateButton,10);
         collectionWorkflowsPage.saveTemplateButton.click();
-        collectionWorkflowsPage.elementIsPresent(collectionWorkflowsPage.allBlockOverdueEmail);
-        collectionWorkflowsPage.elementIsPresent(collectionWorkflowsPage.allBlockDelinquentCall);
-        collectionWorkflowsPage.elementIsPresent(collectionWorkflowsPage.allBlockDelinquentNotification);
-        collectionWorkflowsPage.elementIsPresent(collectionWorkflowsPage.allBlockDelinquentEmail);
+        Assert.assertTrue(collectionWorkflowsPage.elementIsPresent(collectionWorkflowsPage.allBlockOverdueEmail), "Element is not present");
+        Assert.assertTrue(collectionWorkflowsPage.elementIsPresent(collectionWorkflowsPage.allBlockDelinquentCall),"Element is not present");
+        Assert.assertTrue(collectionWorkflowsPage.elementIsPresent(collectionWorkflowsPage.allBlockDelinquentNotification), "Element is not present");
+        Assert.assertTrue(collectionWorkflowsPage.elementIsPresent(collectionWorkflowsPage.allBlockDelinquentEmail),"Element is not present");
 
 
 
